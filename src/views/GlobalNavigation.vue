@@ -4,7 +4,7 @@
     <div class="flex justify-between items-center">
       <div class="flex flex-1 items-center sm:items-streach sm:justify-start">
         <div class="mr-6">
-          <img src="@/assets/icons/sendx.svg" alt="Your Logo" class="h-8 w-8">
+          <img src="@/assets/icons/sendX.svg" alt="Your Logo" class="h-8 w-8">
         </div>
         <button class="relative mr-3">
           Dashboard
