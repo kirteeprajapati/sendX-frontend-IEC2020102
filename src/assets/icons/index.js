@@ -24,7 +24,7 @@ import threedot from './threedot.svg';
 import TITLE from './TITLE.svg';
 import up from './up.svg';
 import VIDEO from './VIDEO.svg';
-
+import graySearch from './graySearch.svg';
 export {
     BUTTON,
     cross,
@@ -52,4 +52,5 @@ export {
     TITLE,
     up,
     VIDEO,
+    graySearch,
 };

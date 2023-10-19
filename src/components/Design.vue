@@ -1,42 +1,80 @@
-<!-- Design.vue -->
 <template>
-  <div>
-    <h2>Design Screen</h2>
-    <!-- Form for design options -->
-    <form class="grid grid-cols-3 gap-2 w-full max-w-screen-sm">
-      <div>
-        <input class = "hidden" id="radio_1" type="radio" name="radio" checked>
-        <label class="flex flex-col p-4 border-2 border-gray-400 cursor-pointer" for="radio_1">
-          <span class="text-xs font-semibold uppercase">Small</span>
-          <span class="text-xl font-bold mt-2">$10/mo</span>
-          <ul class="text-sm mt-2">
-            <li>Thing 1</li>
-            <li>Thing 2</li>
-          </ul>
-        </label>
-      </div>
-      <div>
-        <input class = "hidden" id="radio_2" type="radio" name="radio">
-        <label class="flex flex-col p-4 border-2 border-gray-400 cursor-pointer" for="radio_2">
-          <span class="text-xs font-semibold uppercase">Medium</span>
-          <span class="text-xl font-bold mt-2">$40/mo</span>
-          <ul class="text-sm mt-2">
-            <li>Thing 1</li>
-            <li>Thing 2</li>
-          </ul>
-        </label>
-      </div>
-      <div>
-        <input class = "hidden" id="radio_3" type="radio" name="radio">
-        <label class="flex flex-col p-4 border-2 border-gray-400 cursor-pointer" for="radio_3">
-          <span class="text-xs font-semibold uppercase">Big</span>
-          <span class="text-xl font-bold mt-2">$100/mo</span>
-          <ul class="text-sm mt-2">
-            <li>Thing 1</li>
-            <li>Thing 2</li>
-          </ul>
-        </label>
+  <div class="flex flex-col p-10">
+    
+    <form class="flex justify-end">
+      <div class="flex  leading-6 text-slate-900 placeholder-slate-400 rounded-md ring-1 ring-slate-200 shadow-sm">
+        <img src="@/assets/icons/graySearch.svg" class="mx-2 w-5 flex items-center justify-center">
+        <input class="focus:ring-2 focus:ring-blue-500 focus:outline-none appearance-none text-sm leading-6 text-slate-900 placeholder-slate-400 rounded-md py-2 pl-3 pr-3 ring-1 ring-slate-200 shadow-sm" type="text" aria-label="Search Templates" placeholder="Search Templates...">
+        
       </div>
     </form>
+
+    <h2>Design Screen</h2>
+
+    <!-- Use v-for to iterate over an array of design card data -->
+    <div class ="grid grid-cols-4 gap-4" v-for="(card, index) in designCardsData" :key="index">
+      <design-card
+        :inputId=card.inputId
+        :inputName=card.inputName
+        :isChecked=card.isChecked
+        :imageSrc=card.imageSrc
+        :title= card.title
+      />
+      <design-card
+        :inputId= card.inputId
+        :inputName= card.inputName
+        :isChecked= card.isChecked
+        :imageSrc= card.imageSrc
+        :title= card.title
+      />
+      <design-card
+        :inputId= card.inputId
+        :inputName= card.inputName
+        :isChecked= card.isChecked
+        :imageSrc= card.imageSrc
+        :title= card.title
+      />
+      
+      <design-card
+        :inputId=card.inputId
+        :inputName=card.inputName
+        :isChecked=card.isChecked
+        :imageSrc=card.imageSrc
+        :title= card.title
+      />
+      <design-card
+        :inputId= card.inputId
+        :inputName= card.inputName
+        :isChecked= card.isChecked
+        :imageSrc= card.imageSrc
+        :title= card.title
+      />
+      
+    </div>
   </div>
 </template>
+
+<script>
+import DesignCard from "@/components/DesignCard.vue"; // Import your DesignCard component
+import * as Icons from "@/assets/icons/index.js";
+
+export default {
+  components: {
+    "design-card": DesignCard, // Register the DesignCard component
+  },
+  data() {
+    return {
+      designCardsData: [
+        {
+          inputId: "radio_1",
+          inputName: "radio",
+          isChecked: false,
+          imageSrc: Icons.GIFS,
+          title:  "Card 1",
+        },
+      ],
+    };
+  },
+};
+</script>
+
