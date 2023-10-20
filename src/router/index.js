@@ -1,23 +1,58 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
-  ]
-})
+import FlowNavigation from '@/components/FlowNavigation.vue';
+import Type from '@/components/Type.vue';
+import Design from '@/components/Design.vue';
+import Content from '@/components/Content.vue';
+import Targeting from '@/components/Targeting.vue';
+import Behavior from '@/components/Behavior.vue';
+import Success from '@/components/Success.vue';
 
-export default router
+Vue.use(VueRouter);
+
+const routes = [
+  {
+    path: '/',
+    name: 'Dashboard',
+    component: FlowNavigation,
+  },
+  {
+    path: '/src/components/Type.vue',
+    name: 'Type',
+    component: Type,
+  },
+  {
+    path: '/src/components/Design.vue',
+    name: 'Design',
+    component: Design,
+  },
+  {
+    path: '/src/components/Content.vue',
+    name: 'Content',
+    component: Content,
+  },
+  {
+    path: '/src/components/Targeting.vue',
+    name: 'Targeting',
+    component: Targeting,
+  },
+  {
+    path: '/src/components/Behavior.vue',
+    name: 'Behavior',
+    component: Behavior,
+  },
+  {
+    path: '/src/components/Success.vue',
+    name: 'Success',
+    component: Success,
+  },
+];
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes,
+});
+
+export default router;
