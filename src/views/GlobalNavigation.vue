@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import CompaignsDropdown from '../components/compaignsdropdown.vue';
+import CompaignsDropdown from '../components/CompaignsDropdown.vue';
 import AudienceDropDown from '../components/AudienceDropDown.vue';
 import AutomationsDropDown from '../components/AutomationsDropDown.vue';
 import { Disclosure, DisclosurePanel, DisclosureButton } from '@headlessui/vue';
