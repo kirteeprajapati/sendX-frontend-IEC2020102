@@ -1,28 +1,22 @@
 <template>
   <Disclosure>
-      <nav class="bg-blue-700 p-4 text-white">
+    <nav class="bg-blue-700 p-4 text-white">
     <div class="flex justify-between items-center">
-      <div class="flex flex-1 items-center sm:items-streach sm:justify-start">
-        <div class="mr-6">
-          <img src="@/assets/icons/sendX.svg" alt="Your Logo" class="h-8 w-8">
-        </div>
-        <button class="relative mr-3">
-          Dashboard
-        </button>
-        <button class="mr-3 flex items-center">
-          Campaigns <img src="@/assets/icons/down.svg" class="w-5" alt="Down Icon" />
-        </button>
-        <button class="mr-3 flex items-center">
-          Audience <img src="@/assets/icons/down.svg" class="w-5" alt="Down Icon" />
-        </button>
-        <button class="mr-3 flex items-center">
-          Automations <img src="@/assets/icons/down.svg" class="w-5" alt="Down Icon" />
-        </button>
+      <div class="flex flex-wrap items-center sm:items-streach sm:justify-start space-x-3 pl-1 sm:pl-5 md:pl-10 lg:pl-8 xl:pl-10">
+        <img src="@/assets/icons/sendX.svg" alt="Your Logo" class="h-8">
+        <button class="relative mr-3"> Dashboard </button>
+        <CompaignsDropdown v-if="shouldShowCompaignsDropDown"/>
+        <AudienceDropDown v-if="shouldShowAudienceDropDown"/>
+        <AutomationsDropDown v-if="shouldShowAutomationsDropDown"/>
       </div>
-      <div class="flex items-center">
+
+      <div class="flex items-center pr-10">
+
         <div class="flex items-center border-r pr-4">
           <img src="@/assets/icons/plus.svg" alt="Plus Icon" class="h-5 w-5 ml-1" />
         </div>
+        
+        
         <div class="flex items-center space-x-4 border-r pr-4">
           <img src="@/assets/icons/search.svg" alt="Search Icon" class="h-5 w-5 ml-5" />
           <img src="@/assets/icons/notification.svg" alt="Notification Icon" class="h-5 w-5 ml-1" />
@@ -41,11 +35,22 @@
 </template>
 
 <script>
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+import CompaignsDropdown from '../components/compaignsdropdown.vue';
+import AudienceDropDown from '../components/AudienceDropDown.vue';
+import AutomationsDropDown from '../components/AutomationsDropDown.vue';
 
 export default {
   data() {
-    return {};
+    return {
+      shouldShowCompaignsDropDown: true,
+      shouldShowAudienceDropDown: true,
+      shouldShowAutomationsDropDown: true,
+    };
+  },
+    components: {
+      CompaignsDropdown,
+      AudienceDropDown,
+      AutomationsDropDown,
   },
 };
 </script>

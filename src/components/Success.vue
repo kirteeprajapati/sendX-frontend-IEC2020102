@@ -1,43 +1,58 @@
-<!-- Success.vue -->
 <template>
   <div>
     <h2>Success Screen</h2>
     <!-- Success message or summary -->
      <div class="max-w-lg mx-auto">
     
-      <fieldset class="mb-5">
-        <legend class="sr-only">
-            Show the popup when visitor:
-        </legend>
-
-        <div class="flex items-center mb-4">
-            <input id="country-option-1" type="radio" name="countries" value="USA" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-1" aria-describedby="country-option-1" checked="">
-            <label for="country-option-1" class="text-sm font-medium text-gray-900 ml-2 block">
-            Enters website
-            </label>
-        </div>
-
-        <div class="flex items-center mb-4">
-            <input id="country-option-2" type="radio" name="countries" value="Germany" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-2" aria-describedby="country-option-2">
-            <label for="country-option-2" class="text-sm font-medium text-gray-900 ml-2 block">
-            Exists website
-            </label>
-        </div>
-
-        <div class="flex items-center mb-4">
-            <input id="country-option-3" type="radio" name="countries" value="Spain" class="h-4 w-4 border-gray-300 focus:ring-2 focus:ring-blue-300" aria-labelledby="country-option-3" aria-describedby="country-option-3">
-            <label for="country-option-3" class="text-sm font-medium text-gray-900 ml-2 block">
-            On
-            <label for="quantity">page scroll:</label>
-    
-    <input type="number" id="quantity" name="quantity" min="0" max="100" step="1" value="0">
-
-            </label>
-        </div>
-
-      </fieldset>
+      <mcq-card
+      :question="questionText1"
+      :description="description"
+      :questionId="questionId1"
+      :options="questionOptions1"
+      />
     </div>
     <h2>Go back</h2>
     <button>Finish</button>
   </div>
 </template>
+<script>
+  import MCQCard from "@/components/MCQCard.vue";
+export default {
+  components: {
+    "mcq-card": MCQCard,
+  }, data() {
+      return {
+        questionText1: "What happneds after displaying success screen ?",
+        description:"This is the screen visitors see after successfully submitting your form",
+        questionId1: "question",
+        questionOptions1: [
+          {
+            text: "Do nothing",
+            id: "1",
+            value: "Do nothing",
+            hasQuantity: false,
+          },
+          {
+            text: "Close pop up after ",
+            id: "2",
+            value: "",
+            hasQuantity: true,
+            quantityId: "quantity-onpage",
+            quantityName: "quantity-onpage",
+            min: 0,
+            max: 100,
+            step: 1,
+            defaultValue: 0,
+            quantityLabel: " seconds",
+          },
+          {
+            text: "Redirect to URL",
+            id: "3",
+            value: "Redirect to URL",
+            hasQuantity: false,
+          },
+        ],
+      }
+    }
+  }
+</script>
