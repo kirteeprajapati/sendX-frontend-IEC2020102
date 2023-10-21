@@ -1,13 +1,14 @@
 <!-- App.vue -->
 <template>
   <div>
+  
+    <div class="top-0 sticky">
+      
     <GlobalNavigation />
-    <div>
-      <div> 
         <FlowNavigation />
       </div>
-      <router-view/>
-    </div>
+      <router-view />
+    
   </div>
 </template>
 

@@ -1,59 +1,253 @@
 <template>
-  <div class="h-screen">
-    <nav class="bg-graynav text-white1 padding-x-nav flex justify-between p-2 space-x-2 items-center">
+  <div class=" bg-white1">
+    <nav
+      class="bg-graynav text-white1 padding-x-nav flex justify-between p-2 space-x-2 items-center"
+    >
       <div class="flex space-x-2 items-center">
-        <img src="@/assets/icons/back.svg" alt="back" class="w-4">
+        <img src="@/assets/icons/back.svg" alt="back" class="w-4" />
         <button class="hidden sm:block">Back</button>
       </div>
 
-      <div class="sm:hidden justify-center flex items-center space-x-2 underline underline-offset-8">
-        <div id="dateAndTime" class="text-base text-white1"  >New {{ dateAndTime }}</div> 
-        <img src="@/assets/icons/edit.svg" alt="edit icon" class="h-4" @click="updateDateTime">
+      <div class="justify-center flex items-center space-x-2 underline underline-offset-8">
+        <div id="dateAndTime" class="text-base text-white1">New {{ dateAndTime }}</div>
+        <img src="@/assets/icons/edit.svg" alt="edit icon" class="h-4" @click="updateDateTime" />
       </div>
 
-      <button class="px-4 py-2 max-md:hidden bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl  hover:bg-greenDark transition ring-1 hover:ring-white duration-300">
+      <button
+        class="px-4 py-2 max-md:hidden bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl hover:bg-greenDark transition ring-1 hover:ring-white duration-300"
+      >
         Save & Continue
       </button>
-      <button class="px-4 py-2 hidden max-md:block bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl">
-        <img src="@/assets/icons/save.svg">
+
+      <button
+        class="px-4 py-2 hidden max-md:block bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl"
+      >
+        <img src="@/assets/icons/save.svg" />
       </button>
     </nav>
-      <div>
-        <div class="flex md:flex md:flex-grow flex-row-reverse space-x-1">
-          <a href="" class="py-4 px-2 text-teal-500 border-b-4 border-teal-300 font-semibold">Home</a>
-          <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-teal-300 transition duration-300">Services</a>
-          <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-teal-300 transition duration-300">About</a>
-          <a href="" class="py-4 px-2 text-gray-500 font-semibold hover:text-teal-300 transition duration-300">Contact Us</a>
+
+    <div class="flex justify-center flex-row">
+      <div class="flex-1 padding-x-nav">
+        <div class="flex justify-center space-x-3 p-4">
+          <img
+            src="@/assets/icons/desktop.svg"
+            alt="Desktop icon"
+            class="h-7 hover:bg-graylight rounded-md ring-1 ring-slate-200 shadow-md p-1"
+          />
+          <img
+            src="@/assets/icons/phone.svg"
+            alt="Phone icon"
+            class="h-7 hover:bg-graylight rounded-md ring-1 ring-slate-200 shadow-md p-1"
+          />
+        </div>
+
+        <!-- Content Screen -->
+        <div class="flex justify-center">
+          <div class="rounded-md bg-white">
+            <div class="p-2">
+              <img src="@/assets/icons/threedot.svg" class="w-4" />
+            </div>
+            <img src="@/assets/images/ContentScreen.png" alt="Div under working" />
+          </div>
+          
+        </div>
+        <div class="flex justify-center space-x-2 p-4">
+            <button
+              class="text-sm text-graydark hover:text-white1 rounded-md px-2 py-1 active:bg-graydark hover:bg-graymedium"
+              @click="nothing"
+            >
+              Pop up
+            </button>
+            <button
+              class="text-sm text-graydark hover:text-white1 rounded-md px-2 py-1 active:bg-graydark hover:bg-graymedium"
+              @click="nothing"
+            >
+              Success
+            </button>
+          </div>
+      </div>
+
+      <div class="flex-2 border-2 border-graylight px-4 spacing-y-10">
+        <div class="toggle-button rounded-full shadow-md">
+          <img
+            src="@/assets/icons/rightblack.svg"
+            alt="toggle button"
+            class="h-full"
+            @click="toggleVisible = !toggleVisible"
+          />
+        </div>
+
+        <!-- Right Nav -->
+        <div class="" v-if="toggleVisible">
+          <div class="items-center justify-center">
+            <div class="border-b-2 border-graylight">
+              <div class="flex justify-between px-1 pt-3">
+                <h1 class="text-sm">Content</h1>
+                <img src="@/assets/icons/up.svg" class="w-5" />
+              </div>
+              <div class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center">
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/TITLE.svg" class="image" />
+                  <h1 class="text-sm text-center">TITLE</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/TEXT.svg" class="image" />
+                  <h1 class="text-sm text-center">TEXT</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/IMAGE.svg" class="image" />
+                  <h1 class="text-sm text-center">IMAGE</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/BUTTON.svg" class="image" />
+                  <h1 class="text-sm text-center">BUTTON</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/DIVIDER.svg" class="image" />
+                  <h1 class="text-sm text-center">DIVIDER</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/SOCIAL.svg" class="image" />
+                  <h1 class="text-sm text-center">SOCIAL</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/HTML.svg" class="image" />
+                  <h1 class="text-sm text-center">HTML</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/VIDEO.svg" class="image" />
+                  <h1 class="text-sm text-center">VIDEO</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/ICONS.svg" class="image" />
+                  <h1 class="text-sm text-center">ICONS</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/MENU.svg" class="image" />
+                  <h1 class="text-sm text-center">MENU</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/STICKERS.svg" class="image" />
+                  <h1 class="text-sm text-center">STICKERS</h1>
+                </div>
+                <div
+                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/GIFS.svg" class="image" />
+                  <h1 class="text-sm text-center">GIFS</h1>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-1 py-3 flex justify-between border-b-2 border-graylight">
+              Positon
+              <img src="@/assets/icons/downdark.svg" class="w-4" />
+            </div>
+            <div class="px-1 py-3 flex justify-between border-b-2 border-graylight">
+              Animation
+              <img src="@/assets/icons/downdark.svg" class="w-4" />
+            </div>
+          </div>
         </div>
       </div>
+    </div>
   </div>
 </template>
 
 <script>
+import draggable from 'vuedraggable'
+
 export default {
   data() {
     return {
       dateAndTime: 'Date and time',
-    };
+      navOpen: true,
+      toggleVisible: true
+    }
   },
   methods: {
     updateDateTime() {
-      const now = new Date();
+      const now = new Date()
 
-      const day = now.getDate();
-      const month = now.toLocaleString('default', { month: 'short' });
-      const year = now.getFullYear();
-      const hours = now.getHours().toString().padStart(2, '0'); // Ensure 2-digit format
-      const minutes = now.getMinutes().toString().padStart(2, '0'); // Ensure 2-digit format
+      const day = now.getDate()
+      const month = now.toLocaleString('default', { month: 'short' })
+      const year = now.getFullYear()
+      const hours = now.getHours().toString().padStart(2, '0') // Ensure 2-digit format
+      const minutes = now.getMinutes().toString().padStart(2, '0') // Ensure 2-digit format
 
-      this.dateAndTime = `${day} ${month} ${year}, ${hours}:${minutes}`;
+      this.dateAndTime = `${day} ${month} ${year}, ${hours}:${minutes}`
     },
+    toggleNav() {
+      this.navOpen = !this.navOpen
+    },
+    nothing() {}
   },
+
   mounted() {
     // Initial update of date and time
-    this.updateDateTime();
-  },
-};
+    this.updateDateTime()
+  }
+}
 </script>
 
+<style scoped>
+.toggle-button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  width: 30px;
+  height: 30px;
+  margin-left: -30px; /* Adjust this value to control the position of the button */
+  border: 2px solid graylight;
+  cursor: pointer;
+}
+.div-container {
+  height: 80px; /* Set a fixed height for the container */
+  width: 80px;
+}
+.image {
+  width: 70%; /* Ensure the image takes up the full width of the container */
+  height: 70%; /* Ensure the image takes up the full height of the container */
+  object-fit: contain; /* Maintain the aspect ratio of the image while fitting it in the container */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  width: 0.4rem;
+}
 
+.scrollbar-hide::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* You can adjust the color */
+  border-radius: 1rem;
+}
+
+.scrollbar-hide {
+  scrollbar-width: thin;
+}
+</style>

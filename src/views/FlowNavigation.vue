@@ -1,6 +1,6 @@
 <!-- FlowNavigation.vue -->
 <template>
-  <nav class="bg-gray-100 py-2 text-black padding-x ">
+  <nav class="bg-white py-2 text-black padding-x ">
   <ul class="flex space-x-2 justify-end flex-wrap">
     <li v-for="step in steps" :key="step" class="flex items-center mb-2">
       <router-link :to="`/${step.toLowerCase()}`">{{ step }}</router-link>

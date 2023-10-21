@@ -1,34 +1,34 @@
-<template>
-  <div>
-    <h2>Behavior Screen</h2>
-  <div>
-    <mcq-card
-      :question="questionText1"
-      :questionId="questionId1"
-      :options="questionOptions1"
-    />
-  </div>
-  
-    <button class="cursor-pointer" @click="toggleAdvanced" >Advance</button>
+<template class=" bg-white1">
+  <!-- Options and Buttons -->
+  <div class="flex justify-center w-11/12">
+    <div class="padding-x py-3">
 
-      <mcq-card
-       v-if="showAdvanced"
-      :question="questionText2"
-      :description="description2"
-      :questionId="questionId2"
-      :options="questionOptions2"
-       />
+      <!-- Options -->
+      <div class="flex flex-col p-4 m-10">
 
-      <mcq-card
-       v-if="showAdvanced"
-      :question="questionText3"
-      :description="description3"
-      :questionId="questionId3"
-      :options="questionOptions3"
-       />
+        <mcq-card :question="questionText1" :questionId="questionId1" :options="questionOptions1" class="border-b-2 border-graylight"/>
+        <!-- Advance Options -->
+          <button class="cursor-pointer flex items-center space-x-1 text-black py-4" @click="toggleAdvanced">
+            <h1 class="font-medium text-sky-700">Advance</h1>
+            <img src="@/assets/icons/downdark.svg" class="h-4">
+          </button>
+          <div v-if="showAdvanced">
+            <mcq-card :question="questionText2" :description="description2" :questionId="questionId2"
+              :options="questionOptions2" />
 
-    <h4>Go back</h4>
-    <button>Continue</button>
+            <mcq-card :question="questionText3" :description="description3" :questionId="questionId3"
+              :options="questionOptions3" />
+          </div>
+
+
+      </div>
+      <div class="flex items-center justify-end space-x-4">
+        <h4 class="underline underline-offset-2">Go back</h4>
+        <button class="px-3 py-2 ring-1 ring-slate-100 shadow-md rounded-md bg-white hover:bg-grayhover">Continue</button>
+      </div>
+      <!-- Buttons -->
+
+    </div>
   </div>
 </template>
 
@@ -82,7 +82,7 @@ export default {
           quantityLabel: "seconds on the website",
         },
       ],
-      questionText2:"How Often to show the popup",
+      questionText2: "How Often to show the popup",
       description2: "This is discription",
       questionId2: "question2",
       questionOptions2: [
@@ -103,8 +103,8 @@ export default {
           id: "after days",
           value: "After",
           hasQuantity: true,
-          quantityId: "quantity-onpage",
-          quantityName: "quantity-onpage",
+          quantityId: "quantity-After",
+          quantityName: "quantity-After",
           min: 0,
           max: 100,
           step: 1,
@@ -112,8 +112,8 @@ export default {
           quantityLabel: "days",
         },
       ],
-      questionText3:"When to stop showing the popup",
-      questionId3: "question2",
+      questionText3: "When to stop showing the popup",
+      questionId3: "question3",
       questionOptions3: [
         {
           text: "Never",
@@ -128,11 +128,11 @@ export default {
         },
         {
           text: "If the visitor has successfully completed the action or the pop-up has been shown ",
-          id: "exit browser",
-          value: "Exists new browser session",
+          id: "Pop has been shown",
+          value: "If the visitor has successfully completed the action or the pop-up has been shown",
           hasQuantity: true,
-          quantityId: "quantity-onpage",
-          quantityName: "quantity-onpage",
+          quantityId: "Visitor",
+          quantityName: "Visitor",
           min: 0,
           max: 100,
           step: 1,
