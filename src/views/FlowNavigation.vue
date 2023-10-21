@@ -1,8 +1,8 @@
 <!-- FlowNavigation.vue -->
 <template>
-  <nav class="bg-gray-100 p-4 text-black mx-7 sm:mx-4 md:mx-2 lg:mx-7 xl:mx-10">
-  <ul class="flex justify-between flex-wrap sm:flex-no-wrap">
-    <li v-for="step in steps" :key="step" class="mx-1 flex items-center mb-2">
+  <nav class="bg-gray-100 py-2 text-black padding-x ">
+  <ul class="flex space-x-2 justify-end flex-wrap">
+    <li v-for="step in steps" :key="step" class="flex items-center mb-2">
       <router-link :to="`/${step.toLowerCase()}`">{{ step }}</router-link>
       <img v-if="step !== 'Success'" :src="right" alt="Right Arrow Icon" class="h-4 ml-1" />
     </li>

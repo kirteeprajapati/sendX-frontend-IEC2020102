@@ -3,9 +3,9 @@
         <button
         @mouseenter="setDropDownHovered(true)" 
         @mouseleave="setDropDownHovered(false)" 
-        class="inline-flex items-center justify-center w-full h-12 p-4 text-white bg-blue hover:bg-hoverblue rounded">
+        class="inline-flex items-center justify-center w-full h-12 p-4 text-white bg-blue hover:bg-hoverblue transition duration-300 rounded">
             Audience 
-            <img src="@/assets/icons/down.svg" class="h-4 ml-1 cursor-pointer">
+            <img src="@/assets/icons/down.svg" class="h-4 cursor-pointer">
         </button>
         <div v-show="showDropDown" 
         @mouseenter="setDropDownHovered(true)" 

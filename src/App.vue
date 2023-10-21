@@ -3,10 +3,10 @@
   <div>
     <GlobalNavigation />
     <div>
-      <div class="flex justify-end"> 
+      <div> 
         <FlowNavigation />
       </div>
-      <router-view class="p-20"/>
+      <router-view/>
     </div>
   </div>
 </template>
