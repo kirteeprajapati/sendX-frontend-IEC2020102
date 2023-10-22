@@ -10,7 +10,7 @@
         <div v-show="showDropDown" 
         @mouseenter="setDropDownHovered(true)" 
         @mouseleave="setDropDownHovered(false)" 
-        class="absolute z-10 w-48 p-3 bg-graylight rounded shadow-lg" >
+        class="absolute z-10 w-48 left-10 p-3 bg-graylight rounded shadow-lg" >
             <div role="none" class="flex flex-col">
                 <router-link to="/option1" class="text-black py-2 px-4 cursor-pointer rounded hover:bg-grayhover hover:text-graydark"> Option 1</router-link>
                 <router-link to="/option2" class="text-black py-2 px-4 cursor-pointer rounded hover:bg-grayhover hover:text-graydark"> Option 2</router-link>

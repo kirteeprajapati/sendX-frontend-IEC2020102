@@ -1,5 +1,5 @@
 <template>
-  <div class=" bg-white1">
+  <div class="bg-white1">
     <nav
       class="bg-graynav text-white1 padding-x-nav flex justify-between p-2 space-x-2 items-center"
     >
@@ -8,13 +8,15 @@
         <button class="hidden sm:block">Back</button>
       </div>
 
-      <div class="justify-center flex cursor-pointer items-center space-x-2 underline underline-offset-8">
+      <div
+        class="justify-center flex cursor-pointer items-center space-x-2 underline underline-offset-8"
+      >
         <div id="dateAndTime" class="text-base text-white1">New {{ dateAndTime }}</div>
         <img src="@/assets/icons/edit.svg" alt="edit icon" class="h-4" @click="updateDateTime" />
       </div>
 
       <button
-        class="px-4 py-2 cursor-pointer  max-md:hidden bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl hover:bg-greenDark transition ring-1 hover:ring-white duration-300"
+        class="px-4 py-2 cursor-pointer max-md:hidden bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl hover:bg-greenDark transition ring-1 hover:ring-white duration-300"
       >
         Save & Continue
       </button>
@@ -32,12 +34,12 @@
           <img
             src="@/assets/icons/desktop.svg"
             alt="Desktop icon"
-            class="h-7 hover:bg-graylight cursor-pointer  rounded-md ring-1 ring-slate-200 shadow-md p-1"
+            class="h-7 hover:bg-graylight cursor-pointer rounded-md ring-1 ring-slate-200 shadow-md p-1"
           />
           <img
             src="@/assets/icons/phone.svg"
             alt="Phone icon"
-            class="h-7 hover:bg-graylight cursor-pointer  rounded-md ring-1 ring-slate-200 shadow-md p-1"
+            class="h-7 hover:bg-graylight cursor-pointer rounded-md ring-1 ring-slate-200 shadow-md p-1"
           />
         </div>
 
@@ -47,24 +49,24 @@
             <div class="p-2">
               <img src="@/assets/icons/threedot.svg" class="w-4" />
             </div>
-            <img src="@/assets/images/ContentScreen.png" alt="Div under working" />
+            <PosterEditor />
+            <!-- <img src="@/assets/images/ContentScreen.png" alt="Div under working" /> -->
           </div>
-          
         </div>
         <div class="flex justify-center space-x-2 p-4">
-            <button
-              class="text-sm text-graydark hover:text-white1 rounded-md px-2 py-1 active:bg-graydark hover:bg-graymedium"
-              @click="nothing"
-            >
-              Pop up
-            </button>
-            <button
-              class="text-sm text-graydark hover:text-white1 rounded-md px-2 py-1 active:bg-graydark hover:bg-graymedium"
-              @click="nothing"
-            >
-              Success
-            </button>
-          </div>
+          <button
+            class="text-sm text-graydark hover:text-white1 rounded-md px-2 py-1 active:bg-graydark hover:bg-graymedium"
+            @click="nothing"
+          >
+            Pop up
+          </button>
+          <button
+            class="text-sm text-graydark hover:text-white1 rounded-md px-2 py-1 active:bg-graydark hover:bg-graymedium"
+            @click="nothing"
+          >
+            Success
+          </button>
+        </div>
       </div>
 
       <!-- Toggle Button -->
@@ -82,14 +84,13 @@
         <!-- Right Nav -->
         <div class="md:w-64 w-30" v-if="toggleVisible">
           <div class="items-center justify-center">
-
             <!-- Content -->
             <div class="border-b-2 border-graylight">
-              <div class="flex justify-between px-1 pt-3 cursor-pointer " @click="contentToggle">
+              <div class="flex justify-between px-1 pt-3 cursor-pointer" @click="contentToggle">
                 <h1 class="text-md py-2">Content</h1>
                 <img src="@/assets/icons/up.svg" class="w-5" />
               </div>
-              <div  v-if="contentOpen" class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center">
+              <div v-if="contentOpen" class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center">
                 <div
                   class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
@@ -165,11 +166,11 @@
               </div>
             </div>
             <div class="border-b-2 border-graylight">
-              <div class="flex justify-between px-1 pt-3 cursor-pointer " @click="PositionToggle">
+              <div class="flex justify-between px-1 pt-3 cursor-pointer" @click="PositionToggle">
                 <h1 class="text-md py-2">Position</h1>
                 <img src="@/assets/icons/up.svg" class="w-5" />
               </div>
-              <div  v-if="PositionOpen" class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center">
+              <div v-if="PositionOpen" class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center">
                 <div
                   class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
@@ -196,13 +197,16 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="border-b-2 border-graylight">
-              <div class="flex justify-between px-1 pt-3 cursor-pointer " @click="AnimationToggle">
+              <div class="flex justify-between px-1 pt-3 cursor-pointer" @click="AnimationToggle">
                 <h1 class="text-md py-2">Animation</h1>
                 <img src="@/assets/icons/up.svg" class="w-5" />
               </div>
-              <div  v-if="AnimationOpen" class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center">
+              <div
+                v-if="AnimationOpen"
+                class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center"
+              >
                 <div
                   class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
@@ -232,6 +236,8 @@
 
 <script>
 import draggable from 'vuedraggable'
+import PosterEditor from './PosterEditor.vue'
+import { ref } from 'vue'
 
 export default {
   data() {
@@ -242,7 +248,16 @@ export default {
       contentOpen: false,
       PositionOpen: false,
       AnimationOpen: false,
+      dragging: false,
+      draggedIndex: -1,
+      edittable: false,
+      dragOptions: {
+        animation: 500 // Transition duration when sorting (milliseconds)
+      }
     }
+  },
+  components: {
+    PosterEditor
   },
   methods: {
     updateDateTime() {
@@ -259,20 +274,30 @@ export default {
     toggleNav() {
       this.navOpen = !this.navOpen
     },
-    nothing() { },
+    nothing() {},
     contentToggle() {
-      this.contentOpen = !this.contentOpen;
+      this.contentOpen = !this.contentOpen
     },
     PositionToggle() {
-      this.PositionOpen = !this.PositionOpen;
+      this.PositionOpen = !this.PositionOpen
     },
     AnimationToggle() {
-      this.AnimationOpen = !this.AnimationOpen;
+      this.AnimationOpen = !this.AnimationOpen
     },
+    startDrag(index) {
+      this.dragging = true
+      this.draggedIndex = index
+    },
+    stopDrag() {
+      this.dragging = false
+      this.draggedIndex = -1
+    },
+    updateContent(event) {
+      this.content = event.target.innerHTML
+    }
   },
 
   mounted() {
-    // Initial update of date and time
     this.updateDateTime()
   }
 }
@@ -287,18 +312,18 @@ export default {
   background: white;
   width: 30px;
   height: 30px;
-  margin-left: -30px; /* Adjust this value to control the position of the button */
+  margin-left: -30px; 
   border: 2px solid graylight;
   cursor: pointer;
 }
 .div-container {
-  height: 80px; /* Set a fixed height for the container */
+  height: 80px;
   width: 80px;
 }
 .image {
-  width: 70%; /* Ensure the image takes up the full width of the container */
-  height: 70%; /* Ensure the image takes up the full height of the container */
-  object-fit: contain; /* Maintain the aspect ratio of the image while fitting it in the container */
+  width: 70%; 
+  height: 70%; 
+  object-fit: contain;
 }
 .scrollbar-hide::-webkit-scrollbar {
   width: 0.4rem;
@@ -309,11 +334,34 @@ export default {
 }
 
 .scrollbar-hide::-webkit-scrollbar-thumb {
-  background-color: #ccc; /* You can adjust the color */
+  background-color: #ccc;
   border-radius: 1rem;
 }
 
 .scrollbar-hide {
   scrollbar-width: thin;
+}
+.drag-item {
+  cursor: pointer;
+  margin: 5px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
+.drop-zone {
+  width: 50%;
+  margin: 50px auto;
+  background-color: #ecf0f1;
+  padding: 10px;
+  min-height: 10px;
+}
+.drag-el {
+  background-color: #3498db;
+  color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.drag-el:nth-last-of-type(1) {
+  margin-bottom: 0;
 }
 </style>

@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+import VueRouter, {createWebHistory, createRouter} from 'vue-router';
 
 import FlowNavigation from '@/components/FlowNavigation.vue';
 import Type from '@/components/Type.vue';
@@ -49,9 +49,8 @@ const routes = [
   },
 ];
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
+const router = createRouter({
+  history: createWebHistory(),
   routes,
 });
 

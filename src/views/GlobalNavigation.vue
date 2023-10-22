@@ -10,7 +10,7 @@
       </div>
       <div class="flex items-center space-x-5">
         <div class="sm:hidden">
-          <div @click="toggleMenu" class="w-8">
+          <div @mouseenter="toggleMenu(true)"  @mouseleave="toggleMenu(false)" class="w-8">
             <img
               src="@/assets/icons/menuwhite.svg"
               alt="menu icon"
@@ -18,11 +18,12 @@
             />
           </div>
 
-          <div class="absolute left-0 top-20 flex flex-col bg-blue ring-1 ring-white1 p-3 space-y-2" v-if="isMenuOpen">
+          <div @mouseenter="toggleMenu(true)" @mouseleave="toggleMenu(false)"
+              class="absolute z-10 left-0 flex flex-col bg-blue ring-1 ring-white1 p-3 space-y-2" v-if="isMenuOpen">
             <button class="bg-blue hover:bg-hoverblue p-3 transition duration-300 rounded">
               Dashboard
             </button>
-            <CompaignsDropdown v-if="shouldShowCompaignsDropDown" />
+            <CompaignsDropdown v-if="shouldShowCompaignsDropDown" :class="{'left-20' : isMenuOpen , 'Left-0' : !isMenuOpen}"/>
             <AudienceDropDown v-if="shouldShowAudienceDropDown" />
             <AutomationsDropDown v-if="shouldShowAutomationsDropDown" />
           </div>
@@ -66,13 +67,13 @@ export default {
       shouldShowCompaignsDropDown: true,
       shouldShowAudienceDropDown: true,
       shouldShowAutomationsDropDown: true,
-      isMenuOpen: false
+      isMenuOpen: false,
     }
   },
   methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen
-    }
+    toggleMenu(option) {
+      this.isMenuOpen = option
+    },
   },
   components: {
     CompaignsDropdown,

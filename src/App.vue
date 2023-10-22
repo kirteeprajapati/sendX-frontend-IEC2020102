@@ -5,9 +5,9 @@
     <div class="top-0 sticky">
       
     <GlobalNavigation />
-        <FlowNavigation />
-      </div>
-      <router-view />
+    <FlowNavigation />
+    </div>
+    <router-view />
     
   </div>
 </template>
