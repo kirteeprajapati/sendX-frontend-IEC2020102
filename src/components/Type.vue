@@ -1,13 +1,13 @@
 <!-- Type.vue -->
 <template>
   <div class="flex justify-center">
-    <div class="border-2 border-red padding-x justify-center bg-white1">
+    <div class="padding-x justify-center">
     <div class="pb-4">
       <h2 class="font-bold text-graydark">Select form type</h2>
       <h4 class="text-gray">What kind of form would you like to create?</h4>
     </div>
-    <form class="grid md:grid-cols-3 gap-2 grid-cols-1 justify-center">
-      <label class="flex flex-col w-40 p-4 bg-white border-2 border-graylight cursor-pointer shadow-md rounded-md"
+    <form class="grid md:grid-cols-3 gap-2 grid-cols-1">
+      <label class="flex flex-col w-48 p-4 bg-white border-2 border-graylight cursor-pointer shadow-md rounded-md"
         for="radio_1">
         <div class="flex justify-end">
           <input id="radio_1" type="radio" name="radio">
@@ -20,7 +20,7 @@
 
         </div>
       </label>
-      <label class="flex flex-col w-40 p-4 bg-white space-y-2  border-2 border-graylight cursor-pointer shadow-md rounded-md"
+      <label class="flex flex-col w-48 p-4 bg-white space-y-2  border-2 border-graylight cursor-pointer shadow-md rounded-md"
         for="radio_2">
         <div class="flex justify-end">
           <input id="radio_2" type="radio" name="radio">
@@ -32,7 +32,7 @@
         </div>
       </label>
 
-      <label class="flex flex-col  w-40 p-4 bg-white space-y-2 border-2 border-graylight cursor-pointer shadow-md rounded-md"
+      <label class="flex flex-col  w-48 p-4 bg-white space-y-2 border-2 border-graylight cursor-pointer shadow-md rounded-md"
         for="radio_3">
 
         <div class="flex justify-end">
@@ -46,9 +46,8 @@
       </label>
 
     </form>
-    <div class="flex justify-end">
-      <button
-        class="p-2 border-2 border-graylight rounded-md bg-white hover:bg-graylight active:bg-red shadow-md">Continue</button>
+    <div class="flex justify-end py-5">
+      <button class="p-2 border-2 border-graylight rounded-md bg-white hover:bg-graylight active:bg-red shadow-md">Continue</button>
     </div>
   </div>
   </div>

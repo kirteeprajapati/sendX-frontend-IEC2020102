@@ -3,24 +3,24 @@
     <nav
       class="bg-graynav text-white1 padding-x-nav flex justify-between p-2 space-x-2 items-center"
     >
-      <div class="flex space-x-2 items-center">
+      <div class="flex space-x-2 cursor-pointer items-center">
         <img src="@/assets/icons/back.svg" alt="back" class="w-4" />
         <button class="hidden sm:block">Back</button>
       </div>
 
-      <div class="justify-center flex items-center space-x-2 underline underline-offset-8">
+      <div class="justify-center flex cursor-pointer items-center space-x-2 underline underline-offset-8">
         <div id="dateAndTime" class="text-base text-white1">New {{ dateAndTime }}</div>
         <img src="@/assets/icons/edit.svg" alt="edit icon" class="h-4" @click="updateDateTime" />
       </div>
 
       <button
-        class="px-4 py-2 max-md:hidden bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl hover:bg-greenDark transition ring-1 hover:ring-white duration-300"
+        class="px-4 py-2 cursor-pointer  max-md:hidden bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl hover:bg-greenDark transition ring-1 hover:ring-white duration-300"
       >
         Save & Continue
       </button>
 
       <button
-        class="px-4 py-2 hidden max-md:block bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl"
+        class="px-4 py-2 hidden cursor-pointer max-md:block bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl"
       >
         <img src="@/assets/icons/save.svg" />
       </button>
@@ -32,12 +32,12 @@
           <img
             src="@/assets/icons/desktop.svg"
             alt="Desktop icon"
-            class="h-7 hover:bg-graylight rounded-md ring-1 ring-slate-200 shadow-md p-1"
+            class="h-7 hover:bg-graylight cursor-pointer  rounded-md ring-1 ring-slate-200 shadow-md p-1"
           />
           <img
             src="@/assets/icons/phone.svg"
             alt="Phone icon"
-            class="h-7 hover:bg-graylight rounded-md ring-1 ring-slate-200 shadow-md p-1"
+            class="h-7 hover:bg-graylight cursor-pointer  rounded-md ring-1 ring-slate-200 shadow-md p-1"
           />
         </div>
 
@@ -67,6 +67,8 @@
           </div>
       </div>
 
+      <!-- Toggle Button -->
+
       <div class="flex-2 border-2 border-graylight px-4 spacing-y-10">
         <div class="toggle-button rounded-full shadow-md">
           <img
@@ -78,96 +80,148 @@
         </div>
 
         <!-- Right Nav -->
-        <div class="" v-if="toggleVisible">
+        <div class="md:w-64 w-30" v-if="toggleVisible">
           <div class="items-center justify-center">
+
+            <!-- Content -->
             <div class="border-b-2 border-graylight">
-              <div class="flex justify-between px-1 pt-3">
-                <h1 class="text-sm">Content</h1>
+              <div class="flex justify-between px-1 pt-3 cursor-pointer " @click="contentToggle">
+                <h1 class="text-md py-2">Content</h1>
                 <img src="@/assets/icons/up.svg" class="w-5" />
               </div>
-              <div class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center">
+              <div  v-if="contentOpen" class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center">
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/TITLE.svg" class="image" />
                   <h1 class="text-sm text-center">TITLE</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/TEXT.svg" class="image" />
                   <h1 class="text-sm text-center">TEXT</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/IMAGE.svg" class="image" />
                   <h1 class="text-sm text-center">IMAGE</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/BUTTON.svg" class="image" />
                   <h1 class="text-sm text-center">BUTTON</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/DIVIDER.svg" class="image" />
                   <h1 class="text-sm text-center">DIVIDER</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/SOCIAL.svg" class="image" />
                   <h1 class="text-sm text-center">SOCIAL</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/HTML.svg" class="image" />
                   <h1 class="text-sm text-center">HTML</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/VIDEO.svg" class="image" />
                   <h1 class="text-sm text-center">VIDEO</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/ICONS.svg" class="image" />
                   <h1 class="text-sm text-center">ICONS</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/MENU.svg" class="image" />
                   <h1 class="text-sm text-center">MENU</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/STICKERS.svg" class="image" />
                   <h1 class="text-sm text-center">STICKERS</h1>
                 </div>
                 <div
-                  class="div-container shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                 >
                   <img src="@/assets/icons/GIFS.svg" class="image" />
                   <h1 class="text-sm text-center">GIFS</h1>
                 </div>
               </div>
             </div>
-
-            <div class="px-1 py-3 flex justify-between border-b-2 border-graylight">
-              Positon
-              <img src="@/assets/icons/downdark.svg" class="w-4" />
+            <div class="border-b-2 border-graylight">
+              <div class="flex justify-between px-1 pt-3 cursor-pointer " @click="PositionToggle">
+                <h1 class="text-md py-2">Position</h1>
+                <img src="@/assets/icons/up.svg" class="w-5" />
+              </div>
+              <div  v-if="PositionOpen" class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center">
+                <div
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/TITLE.svg" class="image" />
+                  <h1 class="text-sm text-center">TITLE</h1>
+                </div>
+                <div
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/TEXT.svg" class="image" />
+                  <h1 class="text-sm text-center">TEXT</h1>
+                </div>
+                <div
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/IMAGE.svg" class="image" />
+                  <h1 class="text-sm text-center">IMAGE</h1>
+                </div>
+                <div
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/GIFS.svg" class="image" />
+                  <h1 class="text-sm text-center">GIFS</h1>
+                </div>
+              </div>
             </div>
-            <div class="px-1 py-3 flex justify-between border-b-2 border-graylight">
-              Animation
-              <img src="@/assets/icons/downdark.svg" class="w-4" />
+            
+            <div class="border-b-2 border-graylight">
+              <div class="flex justify-between px-1 pt-3 cursor-pointer " @click="AnimationToggle">
+                <h1 class="text-md py-2">Animation</h1>
+                <img src="@/assets/icons/up.svg" class="w-5" />
+              </div>
+              <div  v-if="AnimationOpen" class="grid md:grid-cols-3 grid-1 gap-2 py-4 justify-center">
+                <div
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/TITLE.svg" class="image" />
+                  <h1 class="text-sm text-center">TITLE</h1>
+                </div>
+                <div
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/TEXT.svg" class="image" />
+                  <h1 class="text-sm text-center">TEXT</h1>
+                </div>
+                <div
+                  class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
+                >
+                  <img src="@/assets/icons/GIFS.svg" class="image" />
+                  <h1 class="text-sm text-center">GIFS</h1>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -184,7 +238,10 @@ export default {
     return {
       dateAndTime: 'Date and time',
       navOpen: true,
-      toggleVisible: true
+      toggleVisible: true,
+      contentOpen: false,
+      PositionOpen: false,
+      AnimationOpen: false,
     }
   },
   methods: {
@@ -202,7 +259,16 @@ export default {
     toggleNav() {
       this.navOpen = !this.navOpen
     },
-    nothing() {}
+    nothing() { },
+    contentToggle() {
+      this.contentOpen = !this.contentOpen;
+    },
+    PositionToggle() {
+      this.PositionOpen = !this.PositionOpen;
+    },
+    AnimationToggle() {
+      this.AnimationOpen = !this.AnimationOpen;
+    },
   },
 
   mounted() {

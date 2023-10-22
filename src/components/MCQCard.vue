@@ -22,7 +22,7 @@
             :name="option.quantityName"
             :min="option.min"
             :max="option.max"
-            class=" bg-red ring-graylight ring-2 rounded-md h-6 items-center p-2 min-w-5"
+            class=" ring-graylight ring-2 rounded-md h-6 items-center p-2 min-w-5"
             :step="option.step"
             :value="option.defaultValue"
           />
