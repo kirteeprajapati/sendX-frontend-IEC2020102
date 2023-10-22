@@ -18,7 +18,7 @@
             />
           </div>
 
-          <div class="absolute flex flex-col" v-if="isMenuOpen">
+          <div class="absolute left-0 top-20 flex flex-col bg-blue ring-1 ring-white1 p-3 space-y-2" v-if="isMenuOpen">
             <button class="bg-blue hover:bg-hoverblue p-3 transition duration-300 rounded">
               Dashboard
             </button>
