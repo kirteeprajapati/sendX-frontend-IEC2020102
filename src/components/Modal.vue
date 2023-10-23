@@ -2,10 +2,8 @@
 <template>
   <div class="modal-overlay">
     <div class="modal">
-      <!-- Modal content goes here -->
       <slot></slot>
-
-      <button @click="closeModal">Close</button>
+      <button @click="closeModal">Back</button>
     </div>
   </div>
 </template>
@@ -37,5 +35,6 @@ export default {
     background: white;
     padding: 20px;
     border-radius: 4px;
+    
   }
 </style>

@@ -11,6 +11,7 @@ import Behavior from "@/components/Behavior.vue";
 
 import '@/assets/style.css'
 const routes = [
+  {path: "/", component: Type},
   { path: "/type", component: Type },
   { path: "/design", component: Design },
   { path: "/content", component: Content },

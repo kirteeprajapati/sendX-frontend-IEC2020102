@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter, {createWebHistory, createRouter} from 'vue-router';
+export const eventBus = new Vue();
 
 import FlowNavigation from '@/components/FlowNavigation.vue';
 import Type from '@/components/Type.vue';

@@ -13,7 +13,7 @@
 <script>
 import * as Icons from '@/assets/icons';
 const { right, down } = Icons;
-
+import Modal from '../components/Modal.vue'
 export default {
   data() {
     return {
@@ -21,6 +21,12 @@ export default {
       right: right,
       down: down,
     };
+  },
+   methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    
   },
 };
 </script>

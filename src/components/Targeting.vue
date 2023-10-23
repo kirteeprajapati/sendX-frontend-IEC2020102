@@ -1,14 +1,14 @@
-<!-- App.vue -->
 <template>
-  <div>
+  <div class="">
     <button @click="showModal">Open Modal</button>
 
     <modal v-if="isModalVisible" @close="closeModal">
-      <!-- Content to display in the modal goes here -->
       <h2>Modal Content</h2>
       <p>This is the content of the modal.</p>
     </modal>
+
   </div>
+  
 </template>
 
 <script>

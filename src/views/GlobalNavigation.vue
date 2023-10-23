@@ -3,13 +3,14 @@
     <nav class="bg-blue text-white padding-x flex justify-between py-2">
       <div class="flex items-center justify-start max-md:hidden">
         <img src="@/assets/icons/sendX.svg" alt="Your Logo" class="h-8 pr-2" />
-        <button class="hover:bg-hoverblue p-3 transition duration-300 rounded">Dashboard</button>
+        <button class=" hover:bg-hoverblue p-3 transition duration-300 rounded">Dashboard</button>
         <CompaignsDropdown v-if="shouldShowCompaignsDropDown" />
         <AudienceDropDown v-if="shouldShowAudienceDropDown" />
         <AutomationsDropDown v-if="shouldShowAutomationsDropDown" />
       </div>
       <div class="flex items-center space-x-5">
-        <div class="sm:hidden">
+        <img src="@/assets/icons/sendX.svg" alt="Your Logo" class="h-8 pr-2 hidden max-md:block" />
+        <div class="md:hidden">
           <div @mouseenter="toggleMenu(true)"  @mouseleave="toggleMenu(false)" class="w-8">
             <img
               src="@/assets/icons/menuwhite.svg"
@@ -20,15 +21,12 @@
 
           <div @mouseenter="toggleMenu(true)" @mouseleave="toggleMenu(false)"
               class="absolute z-10 left-0 flex flex-col bg-blue ring-1 ring-white1 p-3 space-y-2" v-if="isMenuOpen">
-            <button class="bg-blue hover:bg-hoverblue p-3 transition duration-300 rounded">
-              Dashboard
-            </button>
+            <button class=" hover:bg-hoverblue p-3 transition duration-300 rounded">Dashboard</button>
             <CompaignsDropdown v-if="shouldShowCompaignsDropDown" :class="{'left-20' : isMenuOpen , 'Left-0' : !isMenuOpen}"/>
             <AudienceDropDown v-if="shouldShowAudienceDropDown" />
             <AutomationsDropDown v-if="shouldShowAutomationsDropDown" />
           </div>
         </div>
-        <img src="@/assets/icons/sendX.svg" alt="Your Logo" class="h-8 pr-2 hidden max-md:block" />
       </div>
       <div class="flex justify-end items-center">
         <div class="flex items-center p-4">
@@ -81,7 +79,7 @@ export default {
     AutomationsDropDown,
     Disclosure,
     DisclosurePanel,
-    DisclosureButton
+    DisclosureButton,
   }
 }
 

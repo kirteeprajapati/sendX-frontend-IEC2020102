@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import PosterEditor from './PosterEditor.vue';
 export default {
   props: {
     inputId: String,
@@ -24,5 +25,8 @@ export default {
     imageSrc: String,
     title: String,
   },
+  components: {
+    PosterEditor,
+  }
 };
 </script>
