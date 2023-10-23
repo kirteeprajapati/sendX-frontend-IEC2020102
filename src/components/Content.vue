@@ -123,7 +123,7 @@
                     <div
                       class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                     >
-                      <img src="@/assets/icons/IMAGE.svg" class="image" />
+                      <img src="@/assets/icons/image.svg" class="image" />
                       <h1 class="text-sm text-center">IMAGE</h1>
                     </div>
                     <div

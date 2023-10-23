@@ -1,4 +1,4 @@
-<!-- 
+
 <template>
   <div>
     
@@ -22,8 +22,10 @@ export default {
     FlowNavigation,
   },
 };
-</script> -->
+</script>
 
+
+<!-- 
 <template>
   <div id="app">
     <div class="container">
@@ -42,6 +44,8 @@ export default {
     </div>
   </div>
 </template>
+
+
 
 <script>
 import { EmailEditor } from 'vue-email-editor'
@@ -82,4 +86,4 @@ import SampleDesign from './components/sample.json'
       }
     }
   }
-</script>
+</script>  -->
