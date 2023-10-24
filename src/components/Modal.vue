@@ -2,11 +2,6 @@
 <template>
   <div class="modal-overlay">
     <div class="modal ">
-    
-      <div class="flex space-x-3 cursor-pointer items-center">
-            <img @click="navigateToDesign" src="@/assets/icons/back.svg" alt="back" class="w-4 top-20 absolute" />
-            <button @click="navigateToDesign" class="absolute hidden sm:block top-20 text-white">Back</button>
-          </div>
       <slot></slot>
     </div>
   </div>
@@ -15,9 +10,6 @@
 <script>
 export default {
   methods: {
-    closeModal() {
-      this.$emit('close'); // Emit an event to close the modal
-    },
     navigateToDesign() {
       this.$router.push( "/design" ); // Navigate to the "Design" page
     },
