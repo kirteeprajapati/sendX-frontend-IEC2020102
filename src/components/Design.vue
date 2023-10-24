@@ -17,7 +17,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
-          @response-collected="handleResponse"
+          @response-collected="onDesignSelected(card)"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData2" :key="index">
@@ -27,7 +27,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
-          @response-collected="handleResponse"
+          @response-collected="onDesignSelected(card)"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData3" :key="index">
@@ -37,7 +37,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
-          @response-collected="handleResponse"
+          @response-collected="onDesignSelected(card)"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData4" :key="index">
@@ -47,7 +47,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
-          @response-collected="handleResponse"
+          @response-collected="onDesignSelected(card)"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData5" :key="index">
@@ -57,7 +57,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
-          @response-collected="handleResponse"
+          @response-collected="onDesignSelected(card)"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData6" :key="index">
@@ -67,7 +67,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
-          @response-collected="handleResponse"
+          @response-collected="onDesignSelected(card)"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData7" :key="index">
@@ -77,7 +77,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
-          @response-collected="handleResponse"
+          @response-collected="onDesignSelected(card)"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData8" :key="index">
@@ -87,27 +87,36 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
-          @response-collected="handleResponse"
+          @response-collected="onDesignSelected(card)"
         />
       </div>
     </div>
     </div>
-    
   </div>
 </template>
 
 <script>
 import DesignCard from "@/components/DesignCard.vue"; // Import your DesignCard component
 import * as Images from "@/assets/images/index.js";
+import { mapMutations, mapState } from 'vuex';
 
 export default {
+  computed: {
+  ...mapMutations(['updateDesignSelection']),
+  },
   methods: {
     navigateToContent() {
-      this.$router.push( "/design" ); 
+      this.$router.push('/content');
     },
-    handleResponse(responseData) {
-      // Update the userResponses data in the parent component with the response data
-      this.userResponses = responseData
+    onDesignSelected(card) {
+      // Construct the selectedDesignData and emit the response-collected event
+      const selectedDesignData = {
+        id: card.inputId, // Use the actual design ID here
+        name: card.title, // Use the actual design name here
+      };
+      this.updateDesignSelection(selectedDesignData);
+      console.log('User Input (Design):', selectedDesignData);
+      this.$router.push('/content');
     },
   },
   components: {
