@@ -8,12 +8,14 @@ import Targeting from "@/components/Targeting.vue";
 import Success from "@/components/Success.vue";
 import Type from "@/components/Type.vue";
 import Behavior from "@/components/Behavior.vue";
+import Modal from "@/components/Modal.vue";
 
 import '@/assets/style.css'
 const routes = [
-  {path: "/", component: Type},
+  { path: "/", component: Type },
   { path: "/type", component: Type },
   { path: "/design", component: Design },
+  { path: "/modal", component: Modal},
   { path: "/content", component: Content },
   { path: "/targeting", component: Targeting },
   { path: "/behavior", component: Behavior },

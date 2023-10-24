@@ -6,7 +6,9 @@
       <h2 class="font-bold text-graydark">Select form type</h2>
       <h4 class="text-gray">What kind of form would you like to create?</h4>
     </div>
-    <form class="grid md:grid-cols-3 gap-2 grid-cols-1">
+
+    <div class="flex justify-center">
+      <form class="grid sm:grid-cols-3 gap-2 grid-cols-1">
       <label class="flex flex-col w-48 p-4 bg-white border-2 border-graylight cursor-pointer shadow-md rounded-md"
         for="radio_1">
         <div class="flex justify-end">
@@ -46,7 +48,9 @@
       </label>
 
     </form>
-    <div class="flex justify-end py-5">
+    </div>
+    
+    <div @click="navigateToDesign" class="flex justify-end py-5">
       <button class="p-2 border-2 border-graylight rounded-md bg-white hover:bg-graylight active:bg-red shadow-md">Continue</button>
     </div>
   </div>
@@ -56,9 +60,9 @@
 <script>
 export default {
   methods: {
-    toggle() {
-
-    }
-  }
+    navigateToDesign() {
+      this.$router.push( "/design" ); // Navigate to the "Design" page
+    },
+  },
 }
 </script>

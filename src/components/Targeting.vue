@@ -1,34 +1,22 @@
 <template>
-  <div class="">
-    <button @click="showModal">Open Modal</button>
-
-    <modal v-if="isModalVisible" @close="closeModal">
-      <h2>Modal Content</h2>
-      <p>This is the content of the modal.</p>
-    </modal>
+  <div class="flex justify-center items-center relative top-20">
+    <button class="bg-green p-2 rounded-md" @click="navigateToBehavior">Move To behavior Screen</button>
 
   </div>
   
 </template>
 
 <script>
-import Modal from './Modal.vue';
 
 export default {
-  components: {
-    Modal,
-  },
   data() {
     return {
       isModalVisible: false,
     };
   },
   methods: {
-    showModal() {
-      this.isModalVisible = true;
-    },
-    closeModal() {
-      this.isModalVisible = false;
+    navigateToBehavior() {
+      this.$router.push( "/behavior" ); // Navigate to the "Design" page
     },
   },
 };

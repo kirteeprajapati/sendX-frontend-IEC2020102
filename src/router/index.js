@@ -29,6 +29,11 @@ const routes = [
     component: Design,
   },
   {
+    path: '/src/components/Modal.vue',
+    name: 'Modal',
+    component: Modal,
+  },
+  {
     path: '/src/components/Content.vue',
     name: 'Content',
     component: Content,
@@ -50,8 +55,9 @@ const routes = [
   },
 ];
 
-const router = createRouter({
-  history: createWebHistory(),
+const router = new VueRouter({
+  mode: "history", // Use "history" mode for cleaner URLs
+  base: process.env.BASE_URL,
   routes,
 });
 

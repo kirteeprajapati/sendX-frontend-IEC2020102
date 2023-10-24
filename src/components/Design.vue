@@ -10,7 +10,7 @@
     <!-- Use v-for to iterate over an array of design card data -->
     <div class="flex justify-center py-3">
       <div class ="grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-6 md:gap-x-28">
-        <div v-for="(card, index) in designCardsData1" :key="index">
+        <div @click="navigateToContent" v-for="(card, index) in designCardsData1" :key="index">
         <design-card
           :inputId=card.inputId
           :inputName=card.inputName
@@ -19,7 +19,7 @@
           :title= card.title
         />
       </div>
-      <div v-for="(card, index) in designCardsData2" :key="index">
+      <div @click="navigateToContent" v-for="(card, index) in designCardsData2" :key="index">
         <design-card
           :inputId=card.inputId
           :inputName=card.inputName
@@ -28,7 +28,7 @@
           :title= card.title
         />
       </div>
-      <div v-for="(card, index) in designCardsData3" :key="index">
+      <div @click="navigateToContent" v-for="(card, index) in designCardsData3" :key="index">
         <design-card
           :inputId=card.inputId
           :inputName=card.inputName
@@ -37,7 +37,7 @@
           :title= card.title
         />
       </div>
-      <div  v-for="(card, index) in designCardsData4" :key="index">
+      <div @click="navigateToContent" v-for="(card, index) in designCardsData4" :key="index">
         <design-card
           :inputId=card.inputId
           :inputName=card.inputName
@@ -46,7 +46,7 @@
           :title= card.title
         />
       </div>
-      <div  v-for="(card, index) in designCardsData5" :key="index">
+      <div @click="navigateToContent" v-for="(card, index) in designCardsData5" :key="index">
         <design-card
           :inputId=card.inputId
           :inputName=card.inputName
@@ -55,7 +55,7 @@
           :title= card.title
         />
       </div>
-      <div  v-for="(card, index) in designCardsData6" :key="index">
+      <div @click="navigateToContent" v-for="(card, index) in designCardsData6" :key="index">
         <design-card
           :inputId=card.inputId
           :inputName=card.inputName
@@ -64,7 +64,7 @@
           :title= card.title
         />
       </div>
-      <div  v-for="(card, index) in designCardsData7" :key="index">
+      <div @click="navigateToContent" v-for="(card, index) in designCardsData7" :key="index">
         <design-card
           :inputId=card.inputId
           :inputName=card.inputName
@@ -73,7 +73,7 @@
           :title= card.title
         />
       </div>
-      <div  v-for="(card, index) in designCardsData8" :key="index">
+      <div @click="navigateToContent" v-for="(card, index) in designCardsData8" :key="index">
         <design-card
           :inputId=card.inputId
           :inputName=card.inputName
@@ -93,6 +93,11 @@ import DesignCard from "@/components/DesignCard.vue"; // Import your DesignCard 
 import * as Images from "@/assets/images/index.js";
 
 export default {
+  methods: {
+    navigateToContent() {
+      this.$router.push( "/content" ); // Navigate to the "Design" page
+    },
+  },
   components: {
     "design-card": DesignCard, // Register the DesignCard component
   },

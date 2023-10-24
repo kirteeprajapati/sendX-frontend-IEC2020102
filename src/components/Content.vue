@@ -1,6 +1,8 @@
 <template>
   <div class="">
-    <button @click="showModal">Open Modal</button>
+    <div class=" padding-x flex justify-center relative top-20">
+      <button class="bg-gray px-4 py-2 rounded-md" @click="showModal">Open Edit Board</button>
+    </div>
 
     <modal v-if="isModalVisible" @close="closeModal">
       <!-- Content to display in the modal goes here -->
@@ -10,7 +12,7 @@
         >
           <div class="flex space-x-2 cursor-pointer items-center">
             <img src="@/assets/icons/back.svg" alt="back" class="w-4" />
-            <button class="hidden sm:block">Back</button>
+            <button class="hidden ">Back</button>
           </div>
 
           <div
@@ -25,13 +27,13 @@
             />
           </div>
 
-          <button
+          <button @click="navigateToTarget"
             class="px-4 py-2 cursor-pointer max-md:hidden bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl hover:bg-greenDark transition ring-1 hover:ring-white duration-300"
           >
             Save & Continue
           </button>
 
-          <button
+          <button @click="navigateToTarget"
             class="px-4 py-2 hidden cursor-pointer max-md:block bg-green rounded-md text-sm sm:px-6 sm:py-3 sm:text-base md:px-8 md:py-4 md:text-lg lg:text-xl"
           >
             <img src="@/assets/icons/save.svg" />
@@ -123,7 +125,7 @@
                     <div
                       class="div-container cursor-pointer shadow-md bg-white p-2 justify-center rounded-md space-y-1 flex flex-col items-center"
                     >
-                      <img src="@/assets/icons/image.svg" class="image" />
+                      <img src="@/assets/icons/IMAGE.svg" class="image" />
                       <h1 class="text-sm text-center">IMAGE</h1>
                     </div>
                     <div
@@ -287,7 +289,7 @@ export default {
   },
   components: {
     PosterEditor,
-    Modal
+    Modal,
   },
   methods: {
     showModal() {
@@ -342,7 +344,10 @@ export default {
     },
     updateContent(event) {
       this.content = event.target.innerHTML
-    }
+    },
+    navigateToTarget() {
+      this.$router.push( "/targeting" ); // Navigate to the "Design" page
+    },
   },
 
   mounted() {

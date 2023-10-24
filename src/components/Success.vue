@@ -13,7 +13,7 @@
         :options="questionOptions1" class="border-b-2 border-graylight"/>
       </div>
       <div class="flex items-center justify-end space-x-4">
-        <h4 class="underline underline-offset-2">Go back</h4>
+        <h4 @click="navigateToBehavior" class="underline cursor-pointer underline-offset-2">Go back</h4>
         <button class="px-3 py-2 ring-1 ring-slate-100 shadow-md rounded-md bg-white hover:bg-grayhover">Continue</button>
       </div>
       <!-- Buttons -->
@@ -66,7 +66,10 @@ export default {
   methods: {
     toggleAdvanced() {
       this.showAdvanced = !this.showAdvanced;
-    }
+    },
+    navigateToBehavior() {
+      this.$router.push( "/behavior" ); // Navigate to the "Design" page
+    },
   }
 };
 </script>
