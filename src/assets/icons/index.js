@@ -7,7 +7,7 @@ import edit from "./edit.svg";
 import GIFS from "./GIFS.svg";
 import HTML from "./HTML.svg";
 import ICONS from "./ICONS.svg";
-import image from "./image.svg";
+import IMAGE from "./IMAGE.svg";
 import launchPad from './launchpad.svg';
 import MENU from "./MENU.svg";
 import notification from "./notification.svg";
@@ -35,7 +35,7 @@ export {
     GIFS,
     HTML, 
     ICONS,
-    image, 
+    IMAGE, 
     launchPad, 
     MENU,
     notification,
