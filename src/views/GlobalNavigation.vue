@@ -22,7 +22,7 @@
           <div @mouseenter="toggleMenu(true)" @mouseleave="toggleMenu(false)"
               class="absolute z-10 left-0 flex flex-col bg-blue ring-1 ring-white1 p-3 space-y-2" v-if="isMenuOpen">
             <button class=" hover:bg-hoverblue p-3 transition duration-300 rounded">Dashboard</button>
-            <CompaignsDropdown v-if="shouldShowCompaignsDropDown" :class="{'left-20' : isMenuOpen , 'Left-0' : !isMenuOpen}"/>
+            <CompaignsDropdown v-if="shouldShowCompaignsDropDown"/>
             <AudienceDropDown v-if="shouldShowAudienceDropDown" />
             <AutomationsDropDown v-if="shouldShowAutomationsDropDown" />
           </div>
