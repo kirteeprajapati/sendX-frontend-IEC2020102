@@ -13,7 +13,6 @@
 <script>
 import * as Icons from '@/assets/icons';
 const { right, down } = Icons;
-import Modal from '../components/Modal.vue'
 export default {
   data() {
     return {

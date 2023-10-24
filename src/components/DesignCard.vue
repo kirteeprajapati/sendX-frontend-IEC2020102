@@ -27,6 +27,9 @@ export default {
   },
   components: {
     PosterEditor,
+  },
+  methods: {
+    
   }
 };
 </script>

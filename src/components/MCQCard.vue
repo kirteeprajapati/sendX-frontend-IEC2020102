@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <legend class="text-graymedium font-bold text-xl">{{ question }}</legend>
     <legend class="text-gray py-2">{{ description }}</legend>
     <ul type="options">
@@ -12,6 +12,7 @@
           class="h-4 w-4 border-gray focus:ring-2 focus:ring-blue-300"
           :aria-labelledby="`${questionId}-${index}`"
           :aria-describedby="`${questionId}-${index}`"
+          @change="handleResponse(option.value, option.hasQuantity ? option.defaultValue : null)"
         />
         <label :for="option.id" class="text-sm font-semibold text-graydark ml-2 block">
           {{ option.text }}
@@ -22,14 +23,15 @@
             :name="option.quantityName"
             :min="option.min"
             :max="option.max"
-            class=" ring-graylight ring-2 rounded-md h-6 items-center p-2 min-w-5"
+            class="ring-graylight ring-2 rounded-md h-6 items-center p-2 min-w-5"
             :step="option.step"
             :value="option.defaultValue"
+            @change="handleResponse(option.value, parseInt(option.quantityValue))"
           />
           {{ option.quantityLabel }}
         </label>
       </div>
-    </ul> 
+    </ul>
   </div>
 </template>
 
@@ -41,6 +43,11 @@ export default {
     questionId: String,
     options: Array,
   },
+  methods: {
+    handleResponse(option, quantityValue = null) {
+      const response = { option, quantityValue };
+      this.$emit('response-collected', response);
+    },
+  },
 };
 </script>
-

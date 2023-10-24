@@ -41,7 +41,6 @@ export default {
     }
   },
   mounted() {
-    // Initial update of date and time
     this.updateDateTime()
   }
 }

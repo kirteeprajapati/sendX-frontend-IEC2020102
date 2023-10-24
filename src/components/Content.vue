@@ -7,7 +7,7 @@
     <modal v-if="isModalVisible" @close="closeModal">
       <div id="example">
         <div class="container">
-            <nav class="bg-graynav max-h-13 text-white1 padding-x-nav flex justify-between p-2 space-x-2 items-center">
+            <nav class="w-screen bg-graynav max-h-13 text-white1 padding-x-nav flex justify-between p-2 space-x-2 items-center">
               <div class="flex space-x-2 cursor-pointer items-center">
                 <img @click="navigateToDesign" src="@/assets/icons/back.svg" alt="back" class="w-4" />
                 <button @click="navigateToDesign" class="hidden">Back</button>

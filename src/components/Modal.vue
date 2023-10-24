@@ -1,7 +1,7 @@
 <!-- Modal.vue -->
 <template>
-  <div class="modal-overlay">
-    <div class="modal ">
+  <div class="modal-overlay w-screen">
+    <div class="w-screen h-screen bg-white">
       <slot></slot>
     </div>
   </div>

@@ -9,8 +9,9 @@ import Success from "@/components/Success.vue";
 import Type from "@/components/Type.vue";
 import Behavior from "@/components/Behavior.vue";
 import Modal from "@/components/Modal.vue";
-
+import store from './store/store';
 import '@/assets/style.css'
+
 const routes = [
   { path: "/", component: Type },
   { path: "/type", component: Type },
@@ -27,6 +28,7 @@ const router = createRouter({
   routes,
 });
 
-createApp(App)
-  .use(router)
-  .mount("#app");
+const app = createApp(App);
+app.use(store);
+app.use(router);
+app.mount("#app");

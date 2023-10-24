@@ -1,7 +1,7 @@
 <template>
   <div
     v-bind:id="id"
-    class="unlayer-editor"
+    class="unlayer-editor h-96"
     v-bind:style="{ minHeight: minHeight }"
   ></div>
 </template>

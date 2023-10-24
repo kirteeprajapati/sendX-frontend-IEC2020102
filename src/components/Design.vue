@@ -17,6 +17,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
+          @response-collected="handleResponse"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData2" :key="index">
@@ -26,6 +27,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
+          @response-collected="handleResponse"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData3" :key="index">
@@ -35,6 +37,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
+          @response-collected="handleResponse"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData4" :key="index">
@@ -44,6 +47,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
+          @response-collected="handleResponse"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData5" :key="index">
@@ -53,6 +57,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
+          @response-collected="handleResponse"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData6" :key="index">
@@ -62,6 +67,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
+          @response-collected="handleResponse"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData7" :key="index">
@@ -71,6 +77,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
+          @response-collected="handleResponse"
         />
       </div>
       <div @click="navigateToContent" v-for="(card, index) in designCardsData8" :key="index">
@@ -80,6 +87,7 @@
           :isChecked=card.isChecked
           :imageSrc=card.imageSrc
           :title= card.title
+          @response-collected="handleResponse"
         />
       </div>
     </div>
@@ -95,14 +103,19 @@ import * as Images from "@/assets/images/index.js";
 export default {
   methods: {
     navigateToContent() {
-      this.$router.push( "/content" ); // Navigate to the "Design" page
+      this.$router.push( "/design" ); 
+    },
+    handleResponse(responseData) {
+      // Update the userResponses data in the parent component with the response data
+      this.userResponses = responseData
     },
   },
   components: {
-    "design-card": DesignCard, // Register the DesignCard component
+    "design-card": DesignCard, 
   },
   data() {
     return {
+      userResponses: {}, 
       designCardsData1: [
         {
           inputId: "radio_1",
