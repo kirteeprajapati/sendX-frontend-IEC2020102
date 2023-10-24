@@ -86,6 +86,5 @@ export default {
 
 <style scoped>
 .unlayer-editor {
-  background-color: red;
 }
 </style>
