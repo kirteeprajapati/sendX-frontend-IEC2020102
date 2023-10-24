@@ -16,6 +16,7 @@
         />
       </div>
     </form>
+
     <!-- Use v-for to iterate over an array of design card data -->
     <div class="flex justify-center py-3">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-x-10 gap-y-6 md:gap-x-28">
@@ -107,8 +108,7 @@
 <script>
 import DesignCard from '@/components/DesignCard.vue' // Import your DesignCard component
 import * as Images from '@/assets/images/index.js'
-import { mapMutations } from 'vuex'
-
+import { mapMutations, mapState } from 'vuex'
 export default {
   methods: {
     ...mapMutations(['updateDesignSelection']),
@@ -120,15 +120,21 @@ export default {
         id: card.inputId,
         name: card.title,
       };
-      this.updateDesignSelection(selectedDesignData);
+      this.updateDesignSelection(selectedDesignData); // Dispatch the mutation to update the designSelection in the store
       console.log('User Input (Design):', selectedDesignData);
+      console.log('Design Selection in Store:', this.designSelection); // Add this line
       this.$router.push('/content'); // You can leave this here if it's intended behavior.
-    }
+    },
   },
   components: {
-    "design-card": DesignCard,
+    'design-card': DesignCard
   },
-  
+  computed: {
+    ...mapState({
+        selectedDesign: (state) => state.designSelection, // Update this line
+      }),
+  },
+
   data() {
     return {
       userResponses: {},
@@ -206,6 +212,5 @@ export default {
       ]
     }
   }
-  
 }
 </script>
