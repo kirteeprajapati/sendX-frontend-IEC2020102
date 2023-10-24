@@ -1,12 +1,12 @@
 # sendx
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
 ## Project Setup
 
 ```sh
+git clone https://github.com/kirteeprajapati/sendX-frontend-IEC2020102
+
+cd sendX-frontend-IEC2020102
+
 npm install
 ```
 
@@ -33,3 +33,25 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+Below is the preview of the app
+Landing Page:
+![Landing Page](https://github.com/kirteeprajapati/sendX-frontend-IEC2020102/blob/main/assets/Type.png)
+
+Design Screen:
+![Design Screen](https://github.com/kirteeprajapati/sendX-frontend-IEC2020102/blob/main/assets/Design.png)
+
+Custom Made Content Screen:
+![Content Screen](https://github.com/kirteeprajapati/sendX-frontend-IEC2020102/blob/main/assets/CustomeEditor.png)
+
+Unlayer Integration Modal View:
+![Unlayer](https://github.com/kirteeprajapati/sendX-frontend-IEC2020102/blob/main/assets/Unlayer.png)
+
+Behavior Screen:
+![Behavior Screen](https://github.com/kirteeprajapati/sendX-frontend-IEC2020102/blob/main/assets/Behavior.png)
+
+Behavior With Advance options:
+![Advance Options](https://github.com/kirteeprajapati/sendX-frontend-IEC2020102/blob/main/assets/Behavior%20with%20Advance.png)
+
+Success Screen:
+![Success Screen](https://github.com/kirteeprajapati/sendX-frontend-IEC2020102/blob/main/assets/Success.png)
